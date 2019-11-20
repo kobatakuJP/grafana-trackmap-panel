@@ -47,7 +47,11 @@ export class TrackMapCtrl extends MetricsPanelCtrl {
           subdomains: 'abcd',
           maxZoom: 20,
         })
-      })
+      }),
+      '地理院タイル（標準地図）': L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://maps.gsi.go.jp/development/ichiran.html">地理院地図</a>',
+        maxZoom: 18
+      }),
     };
 
     this.timeSrv = $injector.get('timeSrv');
