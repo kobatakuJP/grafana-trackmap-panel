@@ -1,11 +1,11 @@
-import L from './leaflet/leaflet.js';
-import moment from 'moment';
-
 import appEvents from 'app/core/app_events';
-import {MetricsPanelCtrl} from 'app/plugins/sdk';
-
+import { MetricsPanelCtrl } from 'app/plugins/sdk';
+import moment from 'moment';
 import './leaflet/leaflet.css!';
+import L from './leaflet/leaflet.js';
 import './partials/module.css!';
+
+
 
 const panelDefaults = {
   maxDataPoints: 500,
@@ -49,6 +49,10 @@ export class TrackMapCtrl extends MetricsPanelCtrl {
         })
       }),
       '地理院タイル（標準地図）': L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://maps.gsi.go.jp/development/ichiran.html">地理院地図</a>',
+        maxZoom: 18
+      }),
+      '地理院タイル（写真）': L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg', {
         attribution: '&copy; <a href="https://maps.gsi.go.jp/development/ichiran.html">地理院地図</a>',
         maxZoom: 18
       }),
